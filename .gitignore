@@ -1,5 +1,5 @@
 .librarian/
 .tmp/
+modules/
 pkg/
-spec/fixtures/manifests/
-spec/fixtures/modules/
+spec/fixtures/
