@@ -1,0 +1,15 @@
+{
+  interval: 60,
+, accessKeyId: '<%= aws_access_key %>'
+, secretAccessKey: '<%= aws_secret_key %>'
+, region: '<%= aws_region %>'
+, backends: [<% @backends.each do |backend| -%>
+    '<%= backend %>',
+<% end -%>  ]
+, metrics: [<% @aws_metrics.each do |metric| -%>
+    '<%= metric %>'
+<% end -%>  ]
+<% @config.each do |k, v| -%>
+, <%= k %>: <%= v %>
+<% end -%>
+}
