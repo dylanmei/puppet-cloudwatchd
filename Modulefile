@@ -9,4 +9,4 @@ description 'Install and manage cloudwatchd, a CloudWatch metric collection daem
 source 'https://github.com/dylanmei/puppet-cloudwatchd'
 project_page 'https://github.com/dylanmei/puppet-cloudwatchd'
 
-dependency 'puppetlabs/nodejs', '>= 0.2.0'
+dependency 'puppetlabs/nodejs', '>= 0.4.0'
