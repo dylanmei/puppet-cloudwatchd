@@ -1,5 +1,5 @@
 name 'dylanmei-cloudwatchd'
-version '0.1.0'
+version '0.1.1'
 author 'Dylan Meissner <dylanmei@gmail.com>'
 license 'MIT'
 
