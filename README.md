@@ -9,16 +9,16 @@ Install and manage [cloudwatchd](http://github.com/dylanmei/cloudwatchd), an AWS
 class { 'cloudwatchd':
   backends       => ['./backends/syslog'],
   interval       => 120,
-  aws_region     => $aws_region,
-  aws_access_key => $aws_access_key,
-  aws_secret_key => $aws_secret_key,
   config => {
     'syslog' => '{
       "host": "${splunk_host}",
       "port": "${splunk_port}",
     }'
   },
-  metrics => ['{
+  aws_region     => $aws_region,
+  aws_access_key => $aws_access_key,
+  aws_secret_key => $aws_secret_key,
+  aws_metrics => ['{
     "Namespace": "AWS/DynamoDB",
     "MetricName": "ConsumedReadCapacityUnits",
     "Statistic": "Sum",
@@ -29,7 +29,7 @@ class { 'cloudwatchd':
     "MetricName": "CPUUtilization",
     "Statistic": "Average",
     "Unit": "Percent",
-    "Dimensions": [{ "Name": "AutoScalingGroupName", "Value": "my AutoScalingGroupName" }]
+    "Dimensions": [{ "Name": "AutoScalingGroupName", "Value": "myAutoScalingGroupName" }]
   }']
 }
 
