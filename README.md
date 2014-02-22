@@ -8,7 +8,7 @@ Install and manage [cloudwatchd](http://github.com/dylanmei/cloudwatchd), an AWS
 
 class { 'cloudwatchd':
   backends       => ['./backends/syslog'],
-  interval       => 120,
+  interval       => 60,
   config => {
     'syslog' => '{
       "host": "${splunk_host}",
