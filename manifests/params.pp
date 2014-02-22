@@ -7,6 +7,7 @@ class cloudwatchd::params {
   $aws_secret_key = ''
   $aws_region     = ''
   $aws_metrics    = []
+  $max_retries    = 0
 
   case $::osfamily {
     'RedHat': {

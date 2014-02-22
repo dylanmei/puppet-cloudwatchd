@@ -1,11 +1,18 @@
 {
   interval: <%= @interval %>
-, accessKeyId: '<%= @aws_access_key %>'
-, secretAccessKey: '<%= @aws_secret_key %>'
-, region: '<%= @aws_region %>'
 , backends: [<% @backends.each do |backend| -%>
     '<%= backend %>',
 <% end -%>  ]
+<% unless @aws_access_key.empty? -%> 
+, accessKeyId: '<%= @aws_access_key %>'
+<% end -%>
+<% unless @aws_secret_key.empty? %>
+, secretAccessKey: '<%= @aws_secret_key %>'
+<% end %>
+, region: '<%= @aws_region %>'
+<% unless @max_retries == 0 -%>
+, maxRetries: <%= @max_retries %>
+<% end -%>
 , metrics: [<% @aws_metrics.each do |metric| -%>
     <%= metric %>,
 <% end -%>  ]

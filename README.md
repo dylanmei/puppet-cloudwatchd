@@ -35,6 +35,8 @@ class { 'cloudwatchd':
 
 ```
 
+The `aws_region` is required. The `config` map is optional. `aws_access_key` and `aws_secret_key` values are not required if the EC2 instance is configured with an instance-profile with permissions to read statistics from CloudWatch. `aws_metrics` is an array of strings that match the JSON *params* described in the [AWS CloudWatch JavaScript SDK](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudWatch.html#getMetricStatistics-property).
+
 ## notes
 
 Tested on CentOS 6.

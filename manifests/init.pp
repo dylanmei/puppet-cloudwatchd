@@ -7,6 +7,7 @@ class cloudwatchd(
   $aws_secret_key = $cloudwatchd::params::aws_secret_key,
   $aws_region     = $cloudwatchd::params::aws_region,
   $aws_metrics    = $cloudwatchd::params::aws_metrics,
+  $max_retries    = $cloudwatchd::params::max_retries,
   $cloudwatchjs   = $cloudwatchd::params::cloudwatchjs,
   $init_script    = $cloudwatchd::params::init_script,
 ) inherits cloudwatchd::params {
@@ -14,7 +15,7 @@ class cloudwatchd(
   require nodejs
 
   package { 'cloudwatchd':
-    ensure    => $params,
+    ensure    => $ensure,
     provider  => 'npm',
     notify    => Service['cloudwatchd'],
   }
