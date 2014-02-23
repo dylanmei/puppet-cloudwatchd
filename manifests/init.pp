@@ -1,6 +1,6 @@
 class cloudwatchd(
   $ensure         = $cloudwatchd::params::ensure,
-  $interval       = $cloudwatchd::params::interval,
+  $period         = $cloudwatchd::params::period,
   $config         = $cloudwatchd::params::config,
   $backends       = $cloudwatchd::params::backends,
   $aws_access_key = $cloudwatchd::params::aws_access_key,

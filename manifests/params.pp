@@ -1,6 +1,6 @@
 class cloudwatchd::params {
   $ensure   = 'present'
-  $interval = 60
+  $period   = 60
   $config   = {}
   $backends = ['./backends/syslog']
   $aws_access_key = ''
